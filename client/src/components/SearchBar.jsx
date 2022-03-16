@@ -1,13 +1,18 @@
 import React from 'react';
+import './SearchBar.css';
 
-const SearchBar = () => (
-  <form action="/" method="get">
-    <label htmlFor="header-search">
-      <span className="visually-hidden">Search social justice events</span>
-      <input type="text" id="header-search" placeholder="Search" name="s" />
-    </label>
-    <button type="submit">Search</button>
-  </form>
-);
+function SearchBar() {
+  return (
+    <form action="/" method="get">
+      <label htmlFor="search" className="search">
+        <span className="visually-hidden">Search social justice events</span>
+        <input type="text" id="search" placeholder="Search" name="s" />
+      </label>
+      <button type="submit" className="search-button">
+        Search
+      </button>
+    </form>
+  );
+}
 
 export default SearchBar;

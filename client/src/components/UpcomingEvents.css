@@ -1,0 +1,49 @@
+.upcoming-events-header {
+  margin-top: 150px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-view {
+  list-style-type: none;
+  margin-right: 165px;
+}
+
+.calendar-view-symbol {
+  padding: 10px;
+
+  width: 20px;
+  height: 20px;
+
+  background: #E5E5E5;
+}
+
+.upcoming-events-title {
+  list-style-type: none;
+
+  margin-right: auto;
+  margin-left: 165px;
+}
+
+.upcoming-events-title-text {
+  margin: 0;
+
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.card-grid {
+  margin-left: 165px;
+  margin-right: 165px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  align-items: center;
+  justify-content: center;
+}
