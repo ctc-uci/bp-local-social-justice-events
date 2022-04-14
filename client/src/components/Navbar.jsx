@@ -9,10 +9,10 @@ function Navbar() {
           <a href="./#">OC Acts</a>
         </li>
         <li className="navbar--item">
-          <a href="./#">Resources</a>
+          <a href="./resources">Resources</a>
         </li>
         <li className="navbar--item">
-          <a href="./#">About</a>
+          <a href="./about">About</a>
         </li>
         <li className="navbar--item">
           <button className="submit-event-button" type="button">
