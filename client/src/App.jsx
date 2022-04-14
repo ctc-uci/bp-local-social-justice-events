@@ -1,21 +1,29 @@
 import React from 'react';
 import './App.css';
-
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import UpcomingEvents from './components/UpcomingEvents';
+import ReactGA from 'react-ga';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
+  // ReactGA.initialize('UA-178250253-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Header />
-      <SearchBar />
-      <UpcomingEvents />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <div className="page-container">
+          <div className="content-wrap">
+            {/* <Nav /> */}
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+      {/* <Footer /> */}
+    </Router>
   );
 }
 
