@@ -8,9 +8,9 @@ function SearchBar() {
         <span className="visually-hidden">Search social justice events</span>
         <input type="text" id="search" placeholder="Search" name="s" />
       </label>
-      <button type="submit" className="search-button">
+      {/* <button type="submit" className="search-button">
         Search
-      </button>
+      </button> */}
     </form>
   );
 }

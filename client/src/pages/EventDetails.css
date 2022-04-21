@@ -1,0 +1,64 @@
+.eventTitle{
+	padding-left: 100px;
+	font-family: 'Roboto', sans-serif;
+	font-style: Bold;
+	font-size: 36px;
+	line-height: 42px;
+	line-height: 100%;
+	color: black
+	}
+
+.eventHeaderOne{
+	font-family: 'Roboto', sans-serif;
+	font-style: Bold;
+	font-size: 24px;
+	line-height: 28px;
+	line-height: 100%;
+}
+
+.eventText{
+	/* padding: 100px */
+  margin-right: 100px;
+}
+
+.eventSpecifics{
+	display: flex;
+	padding-top: 50px;
+	padding-left: 100px
+}
+
+.eventDate {
+  padding-right: 300px;
+}
+
+.eventDetails{
+	padding-left: 100px
+}
+
+.eventButton {
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 21px 67px;
+
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background: #E5E5E5;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+
+  border-radius: 10px;
+
+
+  color: #000000;
+}

@@ -1,4 +1,4 @@
-h1 {
+.ResourcesTitle {
 	font-family: 'Roboto', sans-serif;
 	font-style: normal;
 	font-weight: 700;
@@ -14,7 +14,7 @@ h1 {
 	margin-top: 75px;
 }
 
-h3 {
+.ResourcesName {
 	font-size: 24px;
 
 	display: flex;
@@ -26,19 +26,19 @@ h3 {
 	margin-left: 165px;
 }
 
-p{
-	font-family: 'Roboto', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 21px;
+.resourcesText{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
 
-	display: flex;
-	justify-content: left;
-	text-align: left;
-	align-content: left;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    align-content: left;
 
-	margin-left: 165px;
+    margin-left: 165px;
 
-	color: #000000;
+    color: #000000;
 }
