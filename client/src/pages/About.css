@@ -1,5 +1,12 @@
 .about {
+  margin: 100px;
+  display: flex;
+}
+
+.about-text {
   margin-left: 165px;
+  float: left;
+  padding: 50px;
 }
 
 .title {
@@ -21,14 +28,20 @@
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 24px;
+  line-height: 30px;
 
-  max-width: 700px;
+  max-width: 540px;
 
   display: flex;
   align-items: left;
   justify-content: left;
 
   color: #000000;
+}
+
+.frog-img {
+  width: 400px;
+  height: 400px;
+  margin-left: 192px;
 }
