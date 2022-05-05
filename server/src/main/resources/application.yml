@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: OCActsService
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+server:
+  address: 0.0.0.0
+  port: 8081
+  error:
+    include-exception: true
+    include-message: always
+
+logging:
+  file:
+    name: ./OCActsService.log
