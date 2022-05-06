@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import './Calendar.css';
+import leftArrow from '../assets/left_navigation_arrow.svg';
+import rightArrow from '../assets/right_navigation_arrow.svg';
 
 function OurCalendar() {
   // const newDate = new Date();
@@ -23,35 +25,61 @@ function OurCalendar() {
     'November',
     'December',
   ];
+  const current = new Date();
+  // current calendar month
+  const [selectedMonth, setSelectedMonth] = useState(allMonthValues[current.getMonth()]);
+  // current calendar year
+  const [selectedYear, setSelectedYear] = useState(current.getFullYear());
 
   // State for date selected by user
   const [selectedDate, setSelectedDate] = useState();
 
-  // State for text above calander
-  const [calendarText, setCalendarText] = useState(`No Date is selected`);
-
   // Function to update selected date and calander text
   const handleDateChange = value => {
     setSelectedDate(value);
-    setCalendarText(`The selected Date is ${value.toDateString()}`);
+    setSelectedMonth(allMonthValues[value.getMonth()]);
+    setSelectedYear(value.getFullYear());
   };
 
   // Function to handle selected Year change
   const handleYearChange = value => {
     const yearValue = value.getFullYear();
-    setCalendarText(`${yearValue} Year  is selected`);
+    setSelectedYear(yearValue);
   };
 
   // Function to handle selected Month change
   const handleMonthChange = value => {
     const monthValue = allMonthValues[value.getMonth()];
-    setCalendarText(`${monthValue} Month  is selected`);
+    setSelectedMonth(monthValue);
+  };
+
+  const navigationLabel = () => {
+    return `Upcoming Events: ${selectedMonth} ${selectedYear}`;
+  };
+
+  const handleActiveStartDateChange = ({ activeStartDate, view }) => {
+    if (view === 'month') {
+      const monthValue = allMonthValues[activeStartDate.getMonth()];
+      setSelectedMonth(monthValue);
+    }
+    if (view !== 'decade') {
+      const yearValue = activeStartDate.getFullYear();
+      setSelectedYear(yearValue);
+    }
   };
 
   return (
-    <div className="app">
-      <h2 className="calander-details">{calendarText}</h2>
+    <div className="calendar-container">
       <Calendar
+        className="calendar"
+        calendarType="US"
+        next2Label={null}
+        prev2Label={null}
+        nextLabel={<img src={rightArrow} alt="Right navigation arrow" />}
+        prevLabel={<img src={leftArrow} alt="Right navigation arrow" />}
+        minDetail="decade"
+        onActiveStartDateChange={handleActiveStartDateChange}
+        navigationLabel={navigationLabel}
         onClickMonth={handleMonthChange}
         onClickYear={handleYearChange}
         onChange={handleDateChange}
