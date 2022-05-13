@@ -1,3 +1,4 @@
+DROP SCHEMA IF EXISTS oc_acts_events;
 CREATE SCHEMA oc_acts_events;
 
 
@@ -5,8 +6,9 @@ CREATE TABLE oc_acts_events.event
 (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(64) NOT NULL,
-    event_datetime DATETIME NOT NULL,
-    event_address VARCHAR(128) NOT NULL
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    address VARCHAR(128) NOT NULL
 );
 
 CREATE TABLE oc_acts_events.tags

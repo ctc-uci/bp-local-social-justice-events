@@ -8,8 +8,8 @@
         <version>2.6.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>server</groupId>
-    <artifactId>server</artifactId>
+    <groupId>com.github.bp-local-social-justice-events</groupId>
+    <artifactId>oc-acts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bp-local-social-justic-events</name>
     <description>bp-local-social-justic-events</description>
@@ -32,13 +32,41 @@
             <artifactId>spring-jdbc</artifactId>
             <version>5.3.18</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.springframework.boot</groupId>
+                <configuration>
+                    <mainClass>oc_acts.OCActsService</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

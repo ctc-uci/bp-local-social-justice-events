@@ -3,7 +3,8 @@ package oc_acts.model.data;
 public class Event {
     private int id;
     private String title;
-    private String datetime;
+    private String date;
+    private String time;
     private String address;
 
     public int getId() {
@@ -24,12 +25,21 @@ public class Event {
         return this;
     }
 
-    public String getDatetime() {
-        return datetime;
+    public String getDate() {
+        return date;
     }
 
-    public Event setDatetime(String datetime) {
-        this.datetime = datetime;
+    public Event setDate(String date) {
+        this.date = date;
+        return this;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public Event setTime(String time) {
+        this.time = time;
         return this;
     }
 
