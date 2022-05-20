@@ -69,7 +69,10 @@
 
   align-self: center;
   justify-self: center;
+  border: 3px solid #091540;
   border-radius: 10px;
+
+  cursor:pointer;
 }
 
 .card-date {

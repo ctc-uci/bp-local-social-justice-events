@@ -7,14 +7,76 @@ import Calendar from './Calendar';
 import CalendarIcon from '../assets/calendar-icon.svg';
 
 function UpcomingEvents() {
+  const allMonthValues = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  // let initEvents = [];
+  // const setInitEvents = newInitEvents => {
+  //   initEvents = newInitEvents;
+  // };
+
+  // Event.getEvents().then(response => setInitEvents(response.data.events));
+  // console.log(initEvents);
+
   const [events, setEvents] = React.useState([]);
   const [state, setState] = React.useState(0);
 
-  const ActiveView = () => {
+  // if this is the initial page start up, get 6 upcoming events to display
+  const [init, setInit] = React.useState(true);
+  if (init === true) {
     Event.getEvents().then(response => setEvents(response.data.events));
-    // eslint-disable-next-line no-console
-    console.log(events);
+    setInit(false);
+  }
 
+  const getMonth = dateString => {
+    const date = new Date(dateString);
+    return allMonthValues[date.getMonth()];
+  };
+
+  const getDay = dateString => {
+    const date = new Date(dateString);
+    return date.getDate();
+  };
+
+  const getDate = dateString => {
+    const date = new Date(dateString);
+
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const day = weekdays[date.getDay()];
+
+    let hours = date.getHours() % 12;
+    if (hours === 0) {
+      hours = 12;
+    }
+
+    let ampm;
+    if (hours < 12) {
+      ampm = 'AM';
+    } else {
+      ampm = 'PM';
+    }
+
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+
+    return `${day}, ${hours}:${minutes} ${ampm}`;
+  };
+
+  const ActiveView = () => {
     switch (state) {
       case 1:
         return <Calendar />;
@@ -22,15 +84,19 @@ function UpcomingEvents() {
         return (
           <div className="card-grid">
             {events.map(event => (
-              <div key="event-card" className="event-card">
-                <h1 className="card-date">Feb</h1>
+              <button type="button" key={`${event.title}${event.datetime}`} className="event-card">
+                <h1 className="card-date">
+                  {getMonth(event.datetime)}
+                  <br />
+                  {getDay(event.datetime)}
+                </h1>
                 <div className="card-info">
                   <h1>{event.title}</h1>
-                  <p>Saturday, 4:00 PM</p>
-                  <p>123 Somewhere Rd</p>
+                  <p>{getDate(event.datetime)}</p>
+                  <p>{event.address}</p>
                   <h3 className="card-tag">Fundraiser</h3>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         );

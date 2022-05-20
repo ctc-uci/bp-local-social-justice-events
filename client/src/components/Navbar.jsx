@@ -16,7 +16,7 @@ function Navbar() {
         </li>
         <li className="navbar--item">
           <button className="submit-event-button" type="button">
-            Submit Event
+            <a href="./submit-event">Submit Event</a>
           </button>
         </li>
       </ul>

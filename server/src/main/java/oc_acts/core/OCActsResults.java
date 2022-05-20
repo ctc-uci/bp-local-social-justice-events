@@ -12,17 +12,19 @@ import org.springframework.http.HttpStatus;
 public final class OCActsResults {
     public static final Result EVENTS_FOUND;
     public static final Result NO_EVENTS_FOUND;
+    public static final Result EVENT_ADDED;
 
     private OCActsResults() {
         throw new AssertionError("No Instances of Results can be created");
     }
 
     static Stream<Result> toStream() {
-        return Stream.of(EVENTS_FOUND, NO_EVENTS_FOUND);
+        return Stream.of(EVENTS_FOUND, NO_EVENTS_FOUND, EVENT_ADDED);
     }
 
     static {
         EVENTS_FOUND = (new Builder()).status(HttpStatus.OK).code(2000).message("Events found").build();
         NO_EVENTS_FOUND = (new Builder()).status(HttpStatus.OK).code(2001).message("No events found").build();
+        EVENT_ADDED = (new Builder()).status(HttpStatus.OK).code(2002).message("Event successfully added").build();
     }
 }

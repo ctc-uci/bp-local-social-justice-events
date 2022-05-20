@@ -17,6 +17,7 @@ import Config from './config.json';
  * login(request)
  * .then(response => alert(JSON.stringify(response.data, null, 2)));
  */
+
 async function getEvents() {
   const options = {
     method: 'GET', // Method type ("POST", "GET", "DELETE", ect)
@@ -28,10 +29,26 @@ async function getEvents() {
   return Axios.request(options);
 }
 
-// async function addEvent(addEventRequest) {
+async function addEvent(addEventRequest) {
+  const requestBody = {
+    title: addEventRequest.title,
+    datetime: addEventRequest.datetime,
+    address: addEventRequest.address,
+  };
 
-// }
+  const options = {
+    method: 'POST', // Method type ("POST", "GET", "DELETE", ect)
+    baseURL: Config.baseUrl, // Base URL (localhost:8080 for example)
+    url: Config.event.add, // Path of URL ("/event")
+    data: requestBody, // Data to send in Body (The RequestBody to send)
+  };
+
+  console.log(options);
+
+  return Axios.request(options);
+}
 
 export default {
   getEvents,
+  addEvent,
 };

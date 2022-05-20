@@ -6,8 +6,7 @@ CREATE TABLE oc_acts_events.event
 (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(64) NOT NULL,
-    date DATE NOT NULL,
-    time TIME NOT NULL,
+    datetime DATETIME NOT NULL,
     address VARCHAR(128) NOT NULL
 );
 

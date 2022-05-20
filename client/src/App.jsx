@@ -25,7 +25,7 @@ function App() {
               <Route exact path="/about" element={<About />} />
               <Route exact path="/resources" element={<Resources />} />
               <Route exact path="/event-details" element={<EventDetails />} />
-              <Route exact path="/submitEvent" element={<SubmitEvent />} />
+              <Route exact path="/submit-event" element={<SubmitEvent />} />
             </Routes>
           </div>
         </div>
