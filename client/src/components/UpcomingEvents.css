@@ -12,13 +12,26 @@
   margin-right: 165px;
 }
 
+.inverted-calendar-view-symbol {
+  padding: 10px;
+
+  width: 26px;
+  height: 26px;
+
+  background: #091540;
+  border: 4px solid #091540;
+  border-radius: 45%;
+}
+
 .calendar-view-symbol {
   padding: 10px;
 
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
 
-  background: #E5E5E5;
+  background: none;
+  border: 4px solid #091540;
+  border-radius: 45%;
 }
 
 .upcoming-events-title {
@@ -47,6 +60,7 @@
   align-items: center;
   justify-content: center;
 
+  margin-bottom: 160px;
 }
 
 .button {
@@ -58,9 +72,8 @@
 .event-card {
   margin: 30px 30px 48px 30px;
 
-  width: 540px;
-  height: 190px;
-  background: #E5E5E5;
+  width: 570px;
+  height: 250px;
 
   display: flex;
   flex-direction: row;
@@ -69,28 +82,35 @@
 
   align-self: center;
   justify-self: center;
-  border: 3px solid #091540;
-  border-radius: 10px;
 
-  cursor:pointer;
+  background: #FFFFFF;
+  border: 4px solid #091540;
+  border-radius: 20px;
+
+  cursor: pointer;
 }
 
 .card-date {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 48px;
+  line-height: 60px;
+  text-align: center;
 
-  margin: 25px 45px 25px 45px;
+  color: #091540;
+
+  margin: 32px 28px 32px 28px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 135px;
-  height: 135px;
+  width: 200px;
+  height: 190px;
 
-  background: #C4C4C4;
-  border-radius: 10px;
+  background: #C6DDF0;
+  border-radius: 30px;
 }
 
 .card-info {
@@ -98,36 +118,42 @@
   text-align: left;
 
   height: 135px;
+
+  color: #000000;
 }
 
 .card-info h1 {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
+  margin: -25px 0 0 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 24px;
-
-  line-height: 24px;
+  line-height: 30px;
 }
 
 .card-info p {
-  font-family: 'Roboto', sans-serif;
+  margin: 40px 0 38px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 14px;
+  font-size: 24px;
+  line-height: 0px;
 }
 
 .card-tag {
-  background: #ACC8FF;
+  background: #ED305D;
   border-radius: 20px;
+  color: #FFFFFF;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
+  line-height: 23px;
   text-align: center;
-  width: 66px;
-  height: 16px;
 
-  margin: 0;
+  width: fit-content;
+
   padding: 7px 19px;
   align-items: center;
   justify-content: center;

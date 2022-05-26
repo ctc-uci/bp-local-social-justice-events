@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import './Calendar.css';
+import Event from '../backend/event';
 import leftArrow from '../assets/left_navigation_arrow.svg';
 import rightArrow from '../assets/right_navigation_arrow.svg';
 
 function OurCalendar() {
-  // const newDate = new Date();
-  // const date = newDate.getDate();
-  // const month = newDate.toLocaleString('en-US', { month: 'long' });
-  // const year = newDate.getFullYear();
-
   // Array to store month string values
   const allMonthValues = [
     'January',
@@ -54,7 +50,7 @@ function OurCalendar() {
   };
 
   const navigationLabel = () => {
-    return `Upcoming Events: ${selectedMonth} ${selectedYear}`;
+    return `${selectedMonth} ${selectedYear}`;
   };
 
   const handleActiveStartDateChange = ({ activeStartDate, view }) => {
@@ -66,6 +62,32 @@ function OurCalendar() {
       const yearValue = activeStartDate.getFullYear();
       setSelectedYear(yearValue);
     }
+  };
+
+  const [events, setEvents] = React.useState([]);
+  const [init, setInit] = React.useState(true);
+  if (init === true) {
+    Event.getEvents().then(response => setEvents(response.data.events));
+    setInit(false);
+  }
+
+  const eventsMap = new Map();
+  events.map(event => eventsMap.set(new Date(event.datetime).toLocaleDateString(), event.title));
+  // eslint-disable-next-line no-console
+  console.log(eventsMap);
+
+  const tileContent = ({ date, view }) => {
+    if (view === 'month' && eventsMap.has(date.toLocaleDateString())) {
+      return (
+        <div>
+          <br />
+          <button type="button" className="calendar-event-label">
+            {eventsMap.get(date.toLocaleDateString())}
+          </button>
+        </div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -84,6 +106,7 @@ function OurCalendar() {
         onClickYear={handleYearChange}
         onChange={handleDateChange}
         value={selectedDate}
+        tileContent={tileContent}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Event from '../backend/event';
+import './SubmitEvent.css';
 // import ReactDOM from 'react-dom';
 // import './App.css';
 
@@ -69,7 +70,7 @@ function SubmitEvent() {
   // const { onAddressChange, onAddressBlur, addressName, addressRef } = register('address');
 
   function submit() {
-    console.log(getValues());
+    // console.log(getValues());
     const payloadDatetime = getValues('date');
     const payloadTitle = getValues('title');
     const payloadAddress = getValues('address');
@@ -84,7 +85,7 @@ function SubmitEvent() {
   }
 
   return (
-    <div>
+    <div className="SubmissionForm">
       <label htmlFor="datetime">
         Event date:
         <input
@@ -97,21 +98,32 @@ function SubmitEvent() {
           value={date}
           min={getToday()}
           max={getNextYearToday()}
+          id="inputField"
         />
       </label>
       <br />
       <label htmlFor="title-label">
         Event title:
-        <input {...register('title')} type="text" />
+        <input {...register('title')} id="inputField" type="text" />
       </label>
       <br />
       <label htmlFor="address">
         Address:
-        <input {...register('address')} type="text" />
+        <input {...register('address')} id="inputField" type="text" />
+      </label>
+      <br />
+      <label htmlFor="url">
+        Link to event:
+        <input {...register('url')} id="inputField" type="text" />
+      </label>
+      <br />
+      <label htmlFor="tag">
+        Tag:
+        <input {...register('tag')} id="inputField" type="text" />
       </label>
       <br />
       <br />
-      <button type="button" onClick={handleSubmit(() => submit())}>
+      <button type="button" className="SubmitButton" onClick={handleSubmit(() => submit())}>
         Submit Event
       </button>
     </div>

@@ -16,7 +16,13 @@
   border-radius:100vh;
   border: none;
 
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 18px;
+  line-height: 23px;
+
+  color: rgba(9, 21, 64, 0.7);
 }
 
 .search-button {

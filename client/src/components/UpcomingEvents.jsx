@@ -5,6 +5,7 @@ import Event from '../backend/event';
 import Calendar from './Calendar';
 
 import CalendarIcon from '../assets/calendar-icon.svg';
+import InvertedCalendarIcon from '../assets/inverted-calendar-icon.svg';
 
 function UpcomingEvents() {
   const allMonthValues = [
@@ -103,6 +104,21 @@ function UpcomingEvents() {
     }
   };
 
+  const CalendarIconView = () => {
+    switch (state) {
+      case 1:
+        return (
+          <img
+            className="inverted-calendar-view-symbol"
+            src={InvertedCalendarIcon}
+            alt="Calendar View"
+          />
+        );
+      default:
+        return <img className="calendar-view-symbol" src={CalendarIcon} alt="Calendar View" />;
+    }
+  };
+
   return (
     <div>
       <ul className="upcoming-events-header">
@@ -111,7 +127,7 @@ function UpcomingEvents() {
         </li>
         <li className="calendar-view">
           <button type="button" className="button" onClick={() => setState(1 - state)}>
-            <img className="calendar-view-symbol" src={CalendarIcon} alt="Calendar View" />
+            {CalendarIconView()}
           </button>
         </li>
       </ul>
