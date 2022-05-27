@@ -1,0 +1,108 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 50px;
+}
+
+.card-container{
+  margin: auto;
+  padding: 40px;
+}
+
+/* .card .profile-img {
+  max-width: 206px;
+  max-height: 206px;
+  flex: 1;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #aaaaaa;
+  margin: auto;
+} */
+
+.profile-img {
+  height: 300px;
+  width: 300px;
+  flex: 1;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #aaaaaa;
+  margin: auto;
+}
+
+.card-bottom {
+  display: flex;
+  width: 300px;
+  min-height: 80px;
+}
+
+.info {
+  flex: 1 auto;
+  color: var(--darkest-purple);
+}
+
+.person-name {
+  margin: 20px 0px 0px 5px;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+
+  color: #091540;
+}
+
+.person-title {
+  margin: 10px 5px;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+
+  color: #091540;
+}
+
+.logoborder {
+  margin-top: 20px;
+}
+
+.logoborder img {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+
+.logoborder:hover {
+  opacity: 0.7;
+}
+
+/* @media screen and (max-width: 600px) {
+  .card {
+    margin: 10px 4%;
+  }
+
+  .card .profile-img {
+    max-width: 260px;
+    max-height: 260px;
+  }
+
+  .card-bottom {
+    width: 260px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .card {
+    margin: 30px 2%;
+  }
+
+  .card .profile-img {
+    max-width: 260px;
+    max-height: 260px;
+  }
+
+  .card-bottom {
+    width: 260px;
+  }
+} */
+
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'); */

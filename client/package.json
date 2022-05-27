@@ -9,6 +9,7 @@
     "axios": "^0.27.2",
     "lint-staged": "^11.2.6",
     "moment": "^2.29.3",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-big-calendar": "^0.40.1",
     "react-calendar": "^3.7.0",

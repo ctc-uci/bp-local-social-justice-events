@@ -74,11 +74,15 @@ function SubmitEvent() {
     const payloadDatetime = getValues('date');
     const payloadTitle = getValues('title');
     const payloadAddress = getValues('address');
+    const payloadUrl = getValues('url');
+    const payloadTag = getValues('tag');
 
     const payload = {
       datetime: payloadDatetime,
       title: payloadTitle,
       address: payloadAddress,
+      url: payloadUrl,
+      tag: payloadTag,
     };
 
     Event.addEvent(payload).then(navigate('../'));

@@ -64,6 +64,8 @@ function OurCalendar() {
     }
   };
 
+  const renderPopUp = () => {};
+
   const [events, setEvents] = React.useState([]);
   const [init, setInit] = React.useState(true);
   if (init === true) {
@@ -73,15 +75,13 @@ function OurCalendar() {
 
   const eventsMap = new Map();
   events.map(event => eventsMap.set(new Date(event.datetime).toLocaleDateString(), event.title));
-  // eslint-disable-next-line no-console
-  console.log(eventsMap);
 
   const tileContent = ({ date, view }) => {
     if (view === 'month' && eventsMap.has(date.toLocaleDateString())) {
       return (
         <div>
           <br />
-          <button type="button" className="calendar-event-label">
+          <button type="button" className="calendar-event-label" onClick={() => renderPopUp()}>
             {eventsMap.get(date.toLocaleDateString())}
           </button>
         </div>

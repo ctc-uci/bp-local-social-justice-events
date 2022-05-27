@@ -1,11 +1,15 @@
-.ResourcesTitle {
-	font-family: 'Roboto', sans-serif;
-	font-style: normal;
-	font-weight: 700;
-	font-size: 48px;
-	line-height: 56px;
+.Resources {
+  margin-bottom: 50px;
+}
 
-	color: #000000;
+.ResourcesTitle {
+	font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+
+  color: #091540;
 
 	display: flex;
 	justify-content: center;
@@ -15,30 +19,24 @@
 }
 
 .ResourcesName {
-	font-size: 24px;
+	font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+  margin-left: 158px;
 
-	display: flex;
-	justify-content: left;
-	text-align: left;
-	align-content: left;
-
-	margin-top: 100px;
-	margin-left: 165px;
+  color: #091540;
 }
 
 .resourcesText{
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
 
-    display: flex;
-    justify-content: left;
-    text-align: left;
-    align-content: left;
+  color: #000000;
 
-    margin-left: 165px;
-
-    color: #000000;
+  margin-left: 205px;
 }

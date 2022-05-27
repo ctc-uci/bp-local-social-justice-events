@@ -34,7 +34,11 @@ async function addEvent(addEventRequest) {
     title: addEventRequest.title,
     datetime: addEventRequest.datetime,
     address: addEventRequest.address,
+    url: addEventRequest.url,
+    tag: addEventRequest.tag,
   };
+
+  console.log(requestBody);
 
   const options = {
     method: 'POST', // Method type ("POST", "GET", "DELETE", ect)
@@ -43,7 +47,7 @@ async function addEvent(addEventRequest) {
     data: requestBody, // Data to send in Body (The RequestBody to send)
   };
 
-  console.log(options);
+  // console.log(options);
 
   return Axios.request(options);
 }

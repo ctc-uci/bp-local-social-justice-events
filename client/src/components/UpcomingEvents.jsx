@@ -1,7 +1,6 @@
 import React from 'react';
 import './UpcomingEvents.css';
 import Event from '../backend/event';
-// import EventCard from './EventCard';
 import Calendar from './Calendar';
 
 import CalendarIcon from '../assets/calendar-icon.svg';
@@ -64,9 +63,9 @@ function UpcomingEvents() {
 
     let ampm;
     if (hours < 12) {
-      ampm = 'AM';
-    } else {
       ampm = 'PM';
+    } else {
+      ampm = 'AM';
     }
 
     let minutes = date.getMinutes();
@@ -77,6 +76,13 @@ function UpcomingEvents() {
     return `${day}, ${hours}:${minutes} ${ampm}`;
   };
 
+  const renderTag = tag => {
+    if (tag !== '') {
+      return <h3 className="card-tag">{tag}</h3>;
+    }
+    return null;
+  };
+
   const ActiveView = () => {
     switch (state) {
       case 1:
@@ -85,7 +91,14 @@ function UpcomingEvents() {
         return (
           <div className="card-grid">
             {events.map(event => (
-              <button type="button" key={`${event.title}${event.datetime}`} className="event-card">
+              <a
+                key={`${event.title}${event.datetime}`}
+                type="button"
+                className="event-card"
+                href={event.url}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <h1 className="card-date">
                   {getMonth(event.datetime)}
                   <br />
@@ -95,9 +108,9 @@ function UpcomingEvents() {
                   <h1>{event.title}</h1>
                   <p>{getDate(event.datetime)}</p>
                   <p>{event.address}</p>
-                  <h3 className="card-tag">Fundraiser</h3>
+                  {renderTag(event.tag)}
                 </div>
-              </button>
+              </a>
             ))}
           </div>
         );

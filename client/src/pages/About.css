@@ -46,3 +46,26 @@
   margin-left: 192px;
 }
 
+.profile-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 30px;
+
+  margin-bottom: 130px;
+}
+
+.team-header {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+
+  color: #091540;
+}
